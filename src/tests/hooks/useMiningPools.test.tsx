@@ -26,7 +26,8 @@ describe("useMiningPools", () => {
       { id: "2", name: "Pool 2", hashrateTHs: 200 },
     ];
 
-    vi.mocked(miningPoolsApi.getPools).mockResolvedValue(mockPools);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    vi.mocked(miningPoolsApi.getPools).mockResolvedValue(mockPools as any);
 
     const { result } = renderHook(() => useMiningPools(), {
       wrapper: createWrapper(),
